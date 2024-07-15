@@ -1,0 +1,52 @@
+biocypher:
+  offline: true
+  debug: false
+  dbms: neo4j
+  schema_config_path: config/schema_config.yaml
+  cache_directory: .cache
+
+  # Ontology configuration
+  head_ontology:
+    url: https://github.com/biolink/biolink-model/raw/v3.2.1/biolink-model.owl.ttl
+    root_node: entity
+
+  tail_ontologies:
+
+    eco:
+      url: http://purl.obolibrary.org/obo/eco.owl
+      head_join_node: entity
+      tail_join_node: evidence
+
+    idpodf:
+      url: data/ontologies/idpo.ttl
+      head_join_node: entity
+      tail_join_node: disorder function
+
+    idposs:
+      url: data/ontologies/idpo.ttl
+      head_join_node: entity
+      tail_join_node: structural state
+
+    idpost:
+      url: data/ontologies/idpo.ttl
+      head_join_node: entity
+      tail_join_node: structural transition
+  
+neo4j:  ### Neo4j configuration ###
+
+  # Database name
+  database_name: dispro
+
+  # Wipe DB before import (offline mode: --force)
+  wipe: true
+
+  # Neo4j authentication
+  uri: neo4j://localhost:7687
+  user: neo4j
+  password: teste_sun
+
+  # Neo4j admin import batch writer settings
+  delimiter: '\t'
+  array_delimiter: '|'
+  skip_duplicate_nodes: true
+  skip_bad_relationships: true

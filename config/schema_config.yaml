@@ -1,0 +1,120 @@
+title: BioCypher adapter for Disordered Proteins database graph
+
+# Nodes
+protein:
+    represented_as: node
+    preferred_id: uniprot
+    label_in_input: protein
+    properties:
+        protein_name: str
+    
+organism:
+    is_a: OrganismTaxon
+    represented_as: node
+    preferred_id: ncbitaxon
+    label_in_input: organism
+    properties:
+        organism_name: str
+
+evidence type:
+    is_a: evidence
+    represented_as: node
+    preferred_id: eco
+    label_in_input: evidence_type
+    properties:
+        evidence_name: str
+
+publication:
+    is_a: entity
+    represented_as: node
+    preferred_id: pubmed
+    label_in_input: publication
+            
+disorder peptide:
+    is_a: entity
+    represented_as: node
+    preferred_id: dispro
+    input_label: disordered_peptide
+
+disorder region:
+    is_a: entity
+    represented_as: node
+    preferred_id: dispro
+    input_label: disordered_region
+    properties:
+        disordered_region_start: int
+        disordered_region_end: int
+        disordered_region_sequence: str
+
+biological process:
+    is_a: gene ontology
+    represented_as: node
+    preferred_id: go
+    label_in_input: biological_process
+    properties:
+        annot_bp_name: str
+  
+cellular component:
+    is_a: gene ontology
+    represented_as: node
+    preferred_id: go
+    label_in_input: cellular_component
+    properties:
+        annot_cc_name: str
+
+molecular function:
+    is_a: gene ontology
+    synonym_for: molecular activity
+    represented_as: node
+    preferred_id: go
+    label_in_input: molecular_function
+    properties:
+        annot_mf_name: str
+    
+structural state:
+    is_a: entity
+    represented_as: node
+    preferred_id: idpo
+    label_in_input: structural_state
+    properties:
+        annot_ss_name: str
+  
+structural transition:
+    is_a: entity
+    represented_as: node
+    preferred_id: idpo
+    label_in_input: structural_transition
+    properties:
+        annot_st_name: str
+
+disorder function:
+    is_a: entity
+    represented_as: node
+    preferred_id: idpo
+    label_in_input: disorder_function
+    properties:
+        annot_df_name: str
+          
+# Edges  
+protein to organism:
+    is_a: association
+    represented_as: edge
+    input_label: protein_to_organism
+
+region to disorder:
+    is_a: association
+    represented_as: edge
+    input_label: region_to_disorder
+
+region to evidence:
+    is_a: association
+    represented_as: edge
+    input_label: region_to_evidence
+        
+protein to region disorder:
+    is_a: association
+    represented_as: edge
+    input_label: protein_to_region_disorder
+    properties:
+        reference_publication: str
+        functional_annotation: str

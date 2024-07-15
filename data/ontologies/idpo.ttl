@@ -1,0 +1,387 @@
+@prefix : <http://purl.obolibrary.org/obo/TEMP#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://purl.obolibrary.org/obo/TEMP> .
+
+<http://purl.obolibrary.org/obo/TEMP> rdf:type owl:Ontology ;
+                                       <http://www.geneontology.org/formats/oboInOwl#default-namespace> "idp_ontology" ;
+                                       <http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion> "1.2" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.obolibrary.org/obo/IAO_0000115
+<http://purl.obolibrary.org/obo/IAO_0000115> rdf:type owl:AnnotationProperty ;
+                                             rdfs:label "definition" .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#default-namespace
+<http://www.geneontology.org/formats/oboInOwl#default-namespace> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion
+<http://www.geneontology.org/formats/oboInOwl#hasOBOFormatVersion> rdf:type owl:AnnotationProperty ;
+                                                                   rdfs:label "has_obo_format_version" .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#hasOBONamespace
+<http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> rdf:type owl:AnnotationProperty ;
+                                                               rdfs:label "has_obo_namespace" .
+
+
+###  http://www.geneontology.org/formats/oboInOwl#id
+<http://www.geneontology.org/formats/oboInOwl#id> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.obolibrary.org/obo/IDPO_00000
+<http://purl.obolibrary.org/obo/IDPO_00000> rdf:type owl:Class ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "The function of an IDP/IDR. Includes both active functions, i.e. performed on other proteins, and self-functions." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "disorder_function" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00000" ;
+                                            rdfs:label "disorder function" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00024
+<http://purl.obolibrary.org/obo/IDPO_00024> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00000> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Targeting post-translational modification." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "disorder_function" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00024" ;
+                                            rdfs:label "molecular recognition display site" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00025
+<http://purl.obolibrary.org/obo/IDPO_00025> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00024> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Guides the addition of a phosphate to the protein." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "disorder_function" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00025" ;
+                                            rdfs:label "phosphorylation display site" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00026
+<http://purl.obolibrary.org/obo/IDPO_00026> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00024> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Guides the addition of an acetyl group to the protein." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "disorder_function" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00026" ;
+                                            rdfs:label "acetylation display site" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00027
+<http://purl.obolibrary.org/obo/IDPO_00027> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00024> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Guides the addition of a methyl group to the protein." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "disorder_function" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00027" ;
+                                            rdfs:label "methylation display site" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00028
+<http://purl.obolibrary.org/obo/IDPO_00028> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00024> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Guides the addition of a sugar, such as a glycan, during chemical modification of the protein." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "disorder_function" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00028" ;
+                                            rdfs:label "glycosylation display site" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00029
+<http://purl.obolibrary.org/obo/IDPO_00029> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00024> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Guides the addition of a ubiquitin moiety for regulating the function and/or degradation of the protein." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "disorder_function" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00029" ;
+                                            rdfs:label "ubiquitination display site" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00030
+<http://purl.obolibrary.org/obo/IDPO_00030> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00024> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Guides the addition of a fatty acyl group during chemical modification of the protein." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "disorder_function" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00030" ;
+                                            rdfs:label "fatty acylation display site" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00031
+<http://purl.obolibrary.org/obo/IDPO_00031> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00024> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Guides the addition of a myristoyl group during chemical modification of the protein." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "disorder_function" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00031" ;
+                                            rdfs:label "myristoylation display site" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00032
+<http://purl.obolibrary.org/obo/IDPO_00032> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00024> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Guides the addition of a palmitoyl group during chemical modification of the protein." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "disorder_function" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00032" ;
+                                            rdfs:label "palmitoylation display site" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00033
+<http://purl.obolibrary.org/obo/IDPO_00033> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00024> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Guides the regulatory cleavage of the polypeptide chain." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "disorder_function" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00033" ;
+                                            rdfs:label "limited proteolysis display site" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00034
+<http://purl.obolibrary.org/obo/IDPO_00034> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00024> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Guides the addition of ADP-ribose moietie(s) to a protein, in cell signaling, DNA repair, gene regulation and apoptosis." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "disorder_function" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00034" ;
+                                            rdfs:label "ADP-ribosylation display site" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00049
+<http://purl.obolibrary.org/obo/IDPO_00049> rdf:type owl:Class ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "The possible transitions occurring between different structural states." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "structural_transition" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00049" ;
+                                            rdfs:label "structural transition" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00050
+<http://purl.obolibrary.org/obo/IDPO_00050> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00049> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Transition from a disordered state to an ordered state." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "structural_transition" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00050" ;
+                                            rdfs:label "disorder to order" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00051
+<http://purl.obolibrary.org/obo/IDPO_00051> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00050> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Transition from a disordered state to a molten globule state." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "structural_transition" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00051" ;
+                                            rdfs:label "disorder to molten globule" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00052
+<http://purl.obolibrary.org/obo/IDPO_00052> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00050> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Transition from a disordered state to a pre-molten globule state." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "structural_transition" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00052" ;
+                                            rdfs:label "disorder to pre-molten globule" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00053
+<http://purl.obolibrary.org/obo/IDPO_00053> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00050> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Transition from a molten globule state to an ordered state." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "structural_transition" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00053" ;
+                                            rdfs:label "molten globule to order" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00054
+<http://purl.obolibrary.org/obo/IDPO_00054> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00056> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Transition from a molten globule state to a pre-molten globule state." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "structural_transition" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00054" ;
+                                            rdfs:label "molten globule to pre-molten globule" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00055
+<http://purl.obolibrary.org/obo/IDPO_00055> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00050> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Transition from a pre-molten globule state to an ordered state." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "structural_transition" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00055" ;
+                                            rdfs:label "pre-molten globule to order" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00056
+<http://purl.obolibrary.org/obo/IDPO_00056> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00049> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Transition from an ordered state to a disordered state." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "structural_transition" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00056" ;
+                                            rdfs:label "order to disorder" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00057
+<http://purl.obolibrary.org/obo/IDPO_00057> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00056> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Transition from an ordered state to a molten globule state." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "structural_transition" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00057" ;
+                                            rdfs:label "order to molten globule" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00058
+<http://purl.obolibrary.org/obo/IDPO_00058> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00056> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Transition from an ordered state to a pre-molten globule state." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "structural_transition" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00058" ;
+                                            rdfs:label "order to pre-molten globule" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00059
+<http://purl.obolibrary.org/obo/IDPO_00059> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00056> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Transition from a pre-molten globule state to a disordered state." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "structural_transition" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00059" ;
+                                            rdfs:label "pre-molten globule to disorder" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00060
+<http://purl.obolibrary.org/obo/IDPO_00060> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00050> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Transition from a pre-molten globule state to a molten globule state." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "structural_transition" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00060" ;
+                                            rdfs:label "pre-molten globule to molten globule" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00061
+<http://purl.obolibrary.org/obo/IDPO_00061> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00056> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Transition from a molten globule state to a disordered state." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "structural_transition" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00061" ;
+                                            rdfs:label "molten globule to disorder" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00075
+<http://purl.obolibrary.org/obo/IDPO_00075> rdf:type owl:Class ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "The possible structural state populated by a given protein region." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "structural_state" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00075" ;
+                                            rdfs:label "structural state" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00076
+<http://purl.obolibrary.org/obo/IDPO_00076> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00075> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A non-compact state in which atoms lack a fixed or ordered three-dimensional structure." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "structural_state" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00076" ;
+                                            rdfs:label "disorder" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00077
+<http://purl.obolibrary.org/obo/IDPO_00077> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00076> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A compact state, with native secondary structure but lacking specific native tertiary interactions." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "structural_state" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00077" ;
+                                            rdfs:label "molten globule" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00078
+<http://purl.obolibrary.org/obo/IDPO_00078> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00076> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A condensed but not compact state, with residual secondary structure, describing many native and non-native conformations in rapid equilibrium." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "structural_state" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00078" ;
+                                            rdfs:label "pre-molten globule" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00079
+<http://purl.obolibrary.org/obo/IDPO_00079> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00075> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "A compact state in which atoms have a stable three-dimensional structure." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "structural_state" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00079" ;
+                                            rdfs:label "order" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00501
+<http://purl.obolibrary.org/obo/IDPO_00501> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00000> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Functions directly associated with the disordered state of proteins that stem from their ability to shift between conformational states without becoming structured. Includes entropic bristles, clocks and springs." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "disorder_function" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00501" ;
+                                            rdfs:label "entropic chain" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00502
+<http://purl.obolibrary.org/obo/IDPO_00502> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00501> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Unstructured region connecting, providing separation and permitting movement between adjacent functional regions, e.g. structured domains or disordered motifs." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "disorder_function" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00502" ;
+                                            rdfs:label "flexible linker/spacer" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00503
+<http://purl.obolibrary.org/obo/IDPO_00503> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00501> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Intrinsically disordered region localized at the N-terminus of a protein." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "disorder_function" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00503" ;
+                                            rdfs:label "flexible N-terminal tail" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00504
+<http://purl.obolibrary.org/obo/IDPO_00504> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00501> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Intrinsically disordered region localized at the C-terminus of a protein." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "disorder_function" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00504" ;
+                                            rdfs:label "flexible C-terminal tail" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00505
+<http://purl.obolibrary.org/obo/IDPO_00505> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00000> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Protein interaction in cis that auto-regulates the protein function or its assembly." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "disorder_function" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00505" ;
+                                            rdfs:label "self-regulatory activity" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00506
+<http://purl.obolibrary.org/obo/IDPO_00506> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00505> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Protein interaction in cis that auto-inhibits the protein function." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "disorder_function" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00506" ;
+                                            rdfs:label "self-inhibition" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00507
+<http://purl.obolibrary.org/obo/IDPO_00507> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00505> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Protein interaction in cis that auto-activates the protein function." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "disorder_function" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00507" ;
+                                            rdfs:label "self-activation" .
+
+
+###  http://purl.obolibrary.org/obo/IDPO_00508
+<http://purl.obolibrary.org/obo/IDPO_00508> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://purl.obolibrary.org/obo/IDPO_00505> ;
+                                            <http://purl.obolibrary.org/obo/IAO_0000115> "Protein interaction in cis required for dimerization or oligomerization of a protein." ;
+                                            <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace> "disorder_function" ;
+                                            <http://www.geneontology.org/formats/oboInOwl#id> "IDPO:00508" ;
+                                            rdfs:label "self-assembly" .
+
+
+###  Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi
